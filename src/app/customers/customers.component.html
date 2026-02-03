@@ -1,0 +1,43 @@
+<div class="border">
+  <button>
+    <i class="fa fa-user"
+    ></i> New friend
+  </button>
+</div>
+<nz-table #filterTable [nzData]="listOfData" nzTableLayout="fixed">
+  <thead>
+  <tr>
+    <th
+      *ngFor="let column of listOfColumns"
+      [nzSortOrder]="column.sortOrder"
+      [nzSortFn]="column.sortFn"
+      [nzSortDirections]="column.sortDirections"
+      [nzFilterMultiple]="column.filterMultiple"
+      [nzFilterFn]="column.filterFn"
+    >
+      {{ column.name }}
+    </th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of filterTable.data">
+    <td>{{ data.id }}</td>
+    <td>{{ data.name }}</td>
+    <td>{{ data.age }}</td>
+    <td>{{ data.address }}</td>
+    <td>
+      <button class="btn btn-sm btn-info">
+        <i class="fa fa-search"></i>Details
+      </button>
+      <button class="btn btn-sm bnt-warning">
+        <i class="fa fa-edit"></i>Edit
+      </button>
+      <button class="btn btn-sm btn-danger"
+              (click)="onDelete(data.id)">
+        <i class="fa-solid fa-x"></i>Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
