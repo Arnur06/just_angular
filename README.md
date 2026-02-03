@@ -1,4 +1,16 @@
 # JustAngular
+## Just Angular Project
+
+Angular учебный проект.
+
+### Установка и запуск
+
+```bash
+git clone https://github.com/Arnur06/just_angular.git
+cd just_angular
+npm install
+ng serve
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
 
